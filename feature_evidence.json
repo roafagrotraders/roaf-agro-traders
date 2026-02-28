@@ -1,0 +1,27 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-display-the-business-address-hangulgund-kokernag-near-sbi-bank-and-contact-number-6006149326-on-the-businessprofilepage-the-site-footer-and-the-homepage-contact-hero-section-wherever-contact-details-are-shown",
+      "featureTitle": "Display the business address 'Hangulgund Kokernag, near SBI Bank' and contact number '6006149326' on the BusinessProfilePage, the site Footer, and the HomePage contact/hero section wherever contact details are shown.",
+      "files": [
+        "frontend/src/components/layout/Footer.tsx",
+        "frontend/src/pages/BusinessProfilePage.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

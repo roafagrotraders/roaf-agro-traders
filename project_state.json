@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Agricultural products e-commerce/catalog app featuring weeders, spare parts, fertilizers, irrigation tools, and horticultural tools, with business address at Hangulgund Kokernag near SBI Bank and contact number 6006149326.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-display-the-business-address-hangulgund-kokernag-near-sbi-bank-and-contact-number-6006149326-on-the-businessprofilepage-the-site-footer-and-the-homepage-contact-hero-section-wherever-contact-details-are-shown",
+      "title": "Display the business address 'Hangulgund Kokernag, near SBI Bank' and contact number '6006149326' on the BusinessProfilePage, the site Footer, and the HomePage contact/hero section wherever contact details are shown.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Add product catalog with weeders, agricultural spare parts, fertilizers, irrigation tools, and horticultural tools",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add business address (Hangulgund Kokernag near SBI Bank) and contact number (6006149326) to the app",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Update the static business profile in the backend to include the address 'Hangulgund Kokernag, near SBI Bank' and contact number '6006149326'.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Roaf Agro Traders",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

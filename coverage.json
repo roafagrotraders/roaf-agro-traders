@@ -1,0 +1,56 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-28T07:21:28.894Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 2,
+    "implemented": 1,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Update the static business profile in the backend to include the address 'Hangulgund Kokernag, near SBI Bank' and contact number '6006149326'.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Display the business address 'Hangulgund Kokernag, near SBI Bank' and contact number '6006149326' on the BusinessProfilePage, the site Footer, and the HomePage contact/hero section wherever contact details are shown.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/BusinessProfilePage.tsx",
+          "frontend/src/components/layout/Footer.tsx",
+          "frontend/src/pages/HomePage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/BusinessProfilePage.tsx",
+          "frontend/src/components/layout/Footer.tsx",
+          "frontend/src/pages/HomePage.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/main.mo",
+    "build-request.json",
+    "build-template/README.md",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/layout/Footer.tsx",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/pages/BusinessProfilePage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

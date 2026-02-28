@@ -1,0 +1,55 @@
+{
+  "kind": "build_request",
+  "title": "Add business address and contact number",
+  "projectName": "Roaf Agro Traders",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Update the static business profile in the backend to include the address 'Hangulgund Kokernag, near SBI Bank' and contact number '6006149326'.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "Add adress hangulgund kokernag near sbi bank and contact number 6006149326"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The business profile actor/record contains address field set to 'Hangulgund Kokernag, near SBI Bank'",
+        "The business profile actor/record contains a contact number field set to '6006149326'"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Display the business address 'Hangulgund Kokernag, near SBI Bank' and contact number '6006149326' on the BusinessProfilePage, the site Footer, and the HomePage contact/hero section wherever contact details are shown.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "Add adress hangulgund kokernag near sbi bank and contact number 6006149326"
+        ]
+      },
+      "acceptanceCriteria": [
+        "BusinessProfilePage shows address 'Hangulgund Kokernag, near SBI Bank' and phone '6006149326'",
+        "Footer component shows address 'Hangulgund Kokernag, near SBI Bank' and phone '6006149326'",
+        "Address and contact number are clearly legible and consistently formatted across all locations"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not alter immutable frontend paths (hooks, main.tsx, ui components)",
+    "Keep all Motoko logic in backend/main.mo single actor"
+  ],
+  "nonGoals": [
+    "Adding new product categories in this request",
+    "Changing the visual theme or layout beyond displaying the new contact details"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

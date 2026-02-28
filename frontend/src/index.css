@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.5rem;
+
+        /* Earthy green primary */
+        --background: 0.97 0.012 95;
+        --foreground: 0.22 0.04 120;
+
+        --card: 0.99 0.006 90;
+        --card-foreground: 0.22 0.04 120;
+
+        --popover: 0.99 0.006 90;
+        --popover-foreground: 0.22 0.04 120;
+
+        /* Deep forest green */
+        --primary: 0.38 0.1 145;
+        --primary-foreground: 0.98 0.005 90;
+
+        /* Warm amber secondary */
+        --secondary: 0.92 0.06 85;
+        --secondary-foreground: 0.28 0.06 80;
+
+        --muted: 0.93 0.015 100;
+        --muted-foreground: 0.52 0.04 120;
+
+        /* Amber accent */
+        --accent: 0.78 0.14 75;
+        --accent-foreground: 0.18 0.04 80;
+
+        --destructive: 0.577 0.245 27.325;
+        --destructive-foreground: 0.985 0 0;
+
+        --border: 0.88 0.025 110;
+        --input: 0.88 0.025 110;
+        --ring: 0.38 0.1 145;
+
+        /* Success green */
+        --success: 0.55 0.15 145;
+        --success-foreground: 0.98 0.005 90;
+
+        /* Warning amber */
+        --warning: 0.75 0.16 70;
+        --warning-foreground: 0.18 0.04 80;
+
+        --chart-1: 0.55 0.15 145;
+        --chart-2: 0.75 0.16 70;
+        --chart-3: 0.45 0.12 200;
+        --chart-4: 0.65 0.18 50;
+        --chart-5: 0.38 0.1 145;
+
+        --sidebar: 0.28 0.07 140;
+        --sidebar-foreground: 0.95 0.01 90;
+        --sidebar-primary: 0.78 0.14 75;
+        --sidebar-primary-foreground: 0.18 0.04 80;
+        --sidebar-accent: 0.35 0.09 140;
+        --sidebar-accent-foreground: 0.95 0.01 90;
+        --sidebar-border: 0.32 0.08 140;
+        --sidebar-ring: 0.78 0.14 75;
+    }
+
+    .dark {
+        --background: 0.16 0.03 140;
+        --foreground: 0.93 0.015 90;
+
+        --card: 0.2 0.04 140;
+        --card-foreground: 0.93 0.015 90;
+
+        --popover: 0.22 0.04 140;
+        --popover-foreground: 0.93 0.015 90;
+
+        --primary: 0.65 0.14 145;
+        --primary-foreground: 0.12 0.03 140;
+
+        --secondary: 0.28 0.05 140;
+        --secondary-foreground: 0.93 0.015 90;
+
+        --muted: 0.26 0.04 140;
+        --muted-foreground: 0.65 0.04 120;
+
+        --accent: 0.72 0.14 75;
+        --accent-foreground: 0.12 0.03 80;
+
+        --destructive: 0.704 0.191 22.216;
+        --destructive-foreground: 0.985 0 0;
+
+        --border: 0.28 0.05 140;
+        --input: 0.28 0.05 140;
+        --ring: 0.65 0.14 145;
+
+        --success: 0.6 0.15 145;
+        --success-foreground: 0.12 0.03 140;
+
+        --warning: 0.72 0.16 70;
+        --warning-foreground: 0.12 0.03 80;
+
+        --chart-1: 0.6 0.15 145;
+        --chart-2: 0.72 0.16 70;
+        --chart-3: 0.5 0.12 200;
+        --chart-4: 0.65 0.18 50;
+        --chart-5: 0.45 0.1 145;
+
+        --sidebar: 0.14 0.03 140;
+        --sidebar-foreground: 0.93 0.015 90;
+        --sidebar-primary: 0.72 0.14 75;
+        --sidebar-primary-foreground: 0.12 0.03 80;
+        --sidebar-accent: 0.2 0.04 140;
+        --sidebar-accent-foreground: 0.93 0.015 90;
+        --sidebar-border: 0.22 0.04 140;
+        --sidebar-ring: 0.72 0.14 75;
+    }
+
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground font-sans;
+    }
+}

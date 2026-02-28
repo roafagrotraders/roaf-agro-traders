@@ -1,0 +1,33 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Add business address and contact number to frontend",
+  "requirements": [
+    {
+      "id": "REQ-2",
+      "summary": "Display business address 'Hangulgund Kokernag, near SBI Bank' and contact number '6006149326' on BusinessProfilePage, Footer, and HomePage contact sections",
+      "acceptanceCriteria": [
+        "BusinessProfilePage shows address 'Hangulgund Kokernag, near SBI Bank' and phone '6006149326'",
+        "Footer component shows address 'Hangulgund Kokernag, near SBI Bank' and phone '6006149326'",
+        "Address and contact number are clearly legible and consistently formatted across all locations"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/BusinessProfilePage.tsx",
+          "operation": "modify",
+          "description": "Display the business address and contact number fields from the BusinessProfile data returned by useGetBusinessProfile. Add a dedicated contact information section or card that renders profile.address and profile.contactNumber with appropriate icons and styling. Ensure these fields are shown alongside existing business details like name, description, and affiliation."
+        },
+        {
+          "path": "frontend/src/components/layout/Footer.tsx",
+          "operation": "modify",
+          "description": "Add display of business address 'Hangulgund Kokernag, near SBI Bank' and contact number '6006149326' in the contact information section of the footer. Include appropriate icons (map pin for address, phone for contact number) and ensure consistent formatting with the existing footer styling. Place these details prominently in the contact area alongside existing information."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Display the business address and contact number in the hero section or a dedicated contact section. Use the BusinessProfile data from useGetBusinessProfile to render profile.address and profile.contactNumber. Ensure the contact details are visible and well-formatted within the existing home page layout, potentially in a contact card or info section."
+        }
+      ]
+    }
+  ]
+}
