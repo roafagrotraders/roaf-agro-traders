@@ -1,31 +1,84 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Add business address and contact number to frontend",
+  "title": "Add Rental, Home Delivery, and Authorized Dealer Highlights",
   "requirements": [
     {
-      "id": "REQ-2",
-      "summary": "Display business address 'Hangulgund Kokernag, near SBI Bank' and contact number '6006149326' on BusinessProfilePage, Footer, and HomePage contact sections",
+      "id": "REQ-1",
+      "summary": "Add a 'Machines Available on Rent' section to the HomePage highlighting rental availability for agricultural machines",
       "acceptanceCriteria": [
-        "BusinessProfilePage shows address 'Hangulgund Kokernag, near SBI Bank' and phone '6006149326'",
-        "Footer component shows address 'Hangulgund Kokernag, near SBI Bank' and phone '6006149326'",
-        "Address and contact number are clearly legible and consistently formatted across all locations"
+        "A rental section/card is visible on the HomePage",
+        "The section clearly communicates that machines are available for rent",
+        "A contact link or call-to-action is present for rental inquiries"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/pages/BusinessProfilePage.tsx",
+          "path": "frontend/src/pages/HomePage.tsx",
           "operation": "modify",
-          "description": "Display the business address and contact number fields from the BusinessProfile data returned by useGetBusinessProfile. Add a dedicated contact information section or card that renders profile.address and profile.contactNumber with appropriate icons and styling. Ensure these fields are shown alongside existing business details like name, description, and affiliation."
+          "description": "Add a 'Machines Available on Rent' section after the hero section and before the featured products. Include a visually distinct card with a heading, short description explaining rental availability for agricultural equipment, and a contact call-to-action button that links to the business contact information. Use earthy-green styling consistent with the existing theme."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Add 'Home Delivery Available' badge or highlight across HomePage hero, ProductCatalogPage, and Footer",
+      "acceptanceCriteria": [
+        "Home delivery information is visible on the HomePage",
+        "Home delivery information is visible on the ProductCatalogPage",
+        "The Footer includes a mention of home delivery",
+        "A delivery icon or badge accompanies the text"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Add a 'Home Delivery Available' badge to the hero section using the generated image at frontend/public/assets/generated/home-delivery-icon.dim_128x128.png. Display the icon alongside text 'Home Delivery Available' in a prominent position within the hero area, styled with earthy-green tones."
+        },
+        {
+          "path": "frontend/src/pages/ProductCatalogPage.tsx",
+          "operation": "modify",
+          "description": "Add a 'Home Delivery Available' badge near the page title or header area using the generated image at frontend/public/assets/generated/home-delivery-icon.dim_128x128.png. Include the delivery icon with text 'Home Delivery Available' to make it prominent for users browsing products."
         },
         {
           "path": "frontend/src/components/layout/Footer.tsx",
           "operation": "modify",
-          "description": "Add display of business address 'Hangulgund Kokernag, near SBI Bank' and contact number '6006149326' in the contact information section of the footer. Include appropriate icons (map pin for address, phone for contact number) and ensure consistent formatting with the existing footer styling. Place these details prominently in the contact area alongside existing information."
-        },
+          "description": "Add a 'Home Delivery Available' mention in the contact section of the footer using the generated image at frontend/public/assets/generated/home-delivery-icon.dim_128x128.png. Display the delivery icon with text to reinforce delivery availability site-wide."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Add 'Authorized Dealer of Srachi in Kashmir Province' highlight to HomePage hero and BusinessProfilePage",
+      "acceptanceCriteria": [
+        "The authorized dealer badge/seal is displayed on the HomePage hero section",
+        "The authorized dealer information is also present on the BusinessProfilePage",
+        "The badge clearly names Srachi and Kashmir Province"
+      ],
+      "file_operations": [
         {
           "path": "frontend/src/pages/HomePage.tsx",
           "operation": "modify",
-          "description": "Display the business address and contact number in the hero section or a dedicated contact section. Use the BusinessProfile data from useGetBusinessProfile to render profile.address and profile.contactNumber. Ensure the contact details are visible and well-formatted within the existing home page layout, potentially in a contact card or info section."
+          "description": "Add an 'Authorized Dealer – Srachi, Kashmir Province' badge to the hero section using the generated image at frontend/public/assets/generated/srachi-dealer-badge.dim_300x120.png. Display the trust seal prominently near the hero content to establish dealer credibility."
+        },
+        {
+          "path": "frontend/src/pages/BusinessProfilePage.tsx",
+          "operation": "modify",
+          "description": "Add an 'Authorized Dealer – Srachi, Kashmir Province' badge to the business profile page using the generated image at frontend/public/assets/generated/srachi-dealer-badge.dim_300x120.png. Display the trust seal in a prominent position alongside other business credentials to reinforce authorized dealer status."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Update ProductCard component to display 'Available for Rent' badge for rental availability",
+      "acceptanceCriteria": [
+        "Product cards show a rental availability indicator",
+        "The indicator is visually distinct from other badges"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/product/ProductCard.tsx",
+          "operation": "modify",
+          "description": "Add an 'Available for Rent' badge to the ProductCard component that displays alongside existing price and availability information. Since the backend does not currently support a rental flag on products, display the rental availability note on all product cards. Style the badge distinctly using earthy-green tones to differentiate it from category and availability badges."
         }
       ]
     }

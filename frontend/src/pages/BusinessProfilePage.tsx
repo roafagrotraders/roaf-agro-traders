@@ -2,7 +2,7 @@ import { useGetBusinessProfile } from '../hooks/useQueries';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
-import { CheckCircle, Building2, Sprout, Award, MapPin, ShieldCheck, Phone } from 'lucide-react';
+import { CheckCircle, Building2, Sprout, Award, MapPin, ShieldCheck, Phone, Mail, Truck, KeyRound } from 'lucide-react';
 
 export default function BusinessProfilePage() {
     const { data: profile, isLoading, error } = useGetBusinessProfile();
@@ -32,9 +32,24 @@ export default function BusinessProfilePage() {
                         />
                     </div>
                     <h1 className="text-4xl font-bold font-serif text-primary-foreground mb-3">About Us</h1>
-                    <p className="text-primary-foreground/80 max-w-xl mx-auto">
+                    <p className="text-primary-foreground/80 max-w-xl mx-auto mb-6">
                         Learn more about Roaf Agro Traders and our commitment to quality agricultural solutions.
                     </p>
+                    {/* Authorized Dealer Badge in Hero */}
+                    <div className="flex flex-wrap items-center justify-center gap-3">
+                        <div className="flex items-center gap-2 bg-amber-600/80 backdrop-blur-sm rounded-full px-5 py-2 border border-amber-400/30">
+                            <Award className="w-4 h-4 text-white" />
+                            <span className="text-sm font-bold text-white">Authorized Dealer – Srachi, Kashmir Province</span>
+                        </div>
+                        <div className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-5 py-2 border border-primary-foreground/20">
+                            <Truck className="w-4 h-4 text-primary-foreground" />
+                            <span className="text-sm font-semibold text-primary-foreground">Home Delivery Available</span>
+                        </div>
+                        <div className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-5 py-2 border border-primary-foreground/20">
+                            <KeyRound className="w-4 h-4 text-primary-foreground" />
+                            <span className="text-sm font-semibold text-primary-foreground">Machines on Rent</span>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -79,8 +94,66 @@ export default function BusinessProfilePage() {
                             </CardContent>
                         </Card>
 
-                        {/* Contact Information */}
+                        {/* Authorized Dealer Highlight */}
+                        <Card className="overflow-hidden shadow-card border-amber-500/30 bg-amber-50/50 dark:bg-amber-950/10">
+                            <div className="h-1.5 bg-gradient-to-r from-amber-500 to-amber-700"></div>
+                            <CardContent className="p-6">
+                                <div className="flex flex-wrap items-center gap-6">
+                                    <div className="w-16 h-16 rounded-2xl bg-amber-500/15 flex items-center justify-center flex-shrink-0">
+                                        <Award className="w-8 h-8 text-amber-700" />
+                                    </div>
+                                    <div className="flex-1 min-w-0">
+                                        <h3 className="font-bold text-foreground text-xl mb-1">Authorized Dealer of Srachi</h3>
+                                        <p className="text-muted-foreground text-sm leading-relaxed">
+                                            Roaf Agro Traders is an officially authorized dealer of <span className="font-semibold text-foreground">Srachi</span> products
+                                            in <span className="font-semibold text-foreground">Kashmir Province</span>. We guarantee genuine Srachi products with full manufacturer support and warranty.
+                                        </p>
+                                    </div>
+                                    <div className="flex items-center gap-2 bg-amber-600 rounded-xl px-4 py-2 flex-shrink-0">
+                                        <CheckCircle className="w-4 h-4 text-white" />
+                                        <span className="text-sm font-bold text-white">Srachi – Kashmir Province</span>
+                                    </div>
+                                </div>
+                            </CardContent>
+                        </Card>
+
+                        {/* Service Highlights */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <Card className="shadow-card border-success/20 hover:shadow-card-hover transition-shadow">
+                                <CardContent className="p-6">
+                                    <div className="flex items-start gap-4">
+                                        <div className="w-12 h-12 rounded-xl bg-success/10 flex items-center justify-center flex-shrink-0">
+                                            <Truck className="w-6 h-6 text-success" />
+                                        </div>
+                                        <div>
+                                            <h3 className="font-bold text-foreground mb-1">Home Delivery Available</h3>
+                                            <p className="text-sm text-muted-foreground">
+                                                We deliver agricultural tools and equipment right to your doorstep across the region. Call us to arrange delivery.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </CardContent>
+                            </Card>
+
+                            <Card className="shadow-card border-accent/20 hover:shadow-card-hover transition-shadow">
+                                <CardContent className="p-6">
+                                    <div className="flex items-start gap-4">
+                                        <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center flex-shrink-0">
+                                            <KeyRound className="w-6 h-6 text-accent-foreground" />
+                                        </div>
+                                        <div>
+                                            <h3 className="font-bold text-foreground mb-1">Machines Available on Rent</h3>
+                                            <p className="text-sm text-muted-foreground">
+                                                Agricultural machines available on a rental basis. Get the equipment you need without the full purchase cost.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        </div>
+
+                        {/* Contact Information */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             <Card className="shadow-card hover:shadow-card-hover transition-shadow">
                                 <CardContent className="p-6">
                                     <div className="flex items-start gap-4">
@@ -110,6 +183,26 @@ export default function BusinessProfilePage() {
                                                 className="font-semibold text-accent-foreground hover:underline"
                                             >
                                                 {profile?.contactNumber || '6006149326'}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </CardContent>
+                            </Card>
+
+                            <Card className="shadow-card hover:shadow-card-hover transition-shadow">
+                                <CardContent className="p-6">
+                                    <div className="flex items-start gap-4">
+                                        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                            <Mail className="w-6 h-6 text-primary" />
+                                        </div>
+                                        <div>
+                                            <h3 className="font-bold text-foreground mb-1">Email</h3>
+                                            <p className="text-sm text-muted-foreground mb-2">Write to us</p>
+                                            <a
+                                                href="mailto:roafagrotraders@gmail.com"
+                                                className="font-semibold text-primary hover:underline break-all"
+                                            >
+                                                roafagrotraders@gmail.com
                                             </a>
                                         </div>
                                     </div>
@@ -150,6 +243,44 @@ export default function BusinessProfilePage() {
                             </Card>
                         </div>
 
+                        {/* Equipment Images */}
+                        <Card className="shadow-card overflow-hidden">
+                            <CardHeader>
+                                <CardTitle className="text-xl font-bold font-serif flex items-center gap-2">
+                                    <Sprout className="w-5 h-5 text-primary" />
+                                    Our Equipment Range
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                    <div className="rounded-xl overflow-hidden aspect-video bg-muted">
+                                        <img
+                                            src="/assets/generated/equipment-tractor.dim_800x500.png"
+                                            alt="Agricultural Tractor"
+                                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                                        />
+                                    </div>
+                                    <div className="rounded-xl overflow-hidden aspect-video bg-muted">
+                                        <img
+                                            src="/assets/generated/equipment-irrigation.dim_800x500.png"
+                                            alt="Irrigation Equipment"
+                                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                                        />
+                                    </div>
+                                    <div className="rounded-xl overflow-hidden aspect-video bg-muted">
+                                        <img
+                                            src="/assets/generated/equipment-tools.dim_800x500.png"
+                                            alt="Agricultural Tools"
+                                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                                        />
+                                    </div>
+                                </div>
+                            </CardContent>
+                        </Card>
+
                         {/* What We Offer */}
                         <Card className="shadow-card">
                             <CardHeader>
@@ -161,7 +292,7 @@ export default function BusinessProfilePage() {
                             <CardContent>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     {[
-                                        { icon: '🚜', title: 'Agricultural Machinery', desc: 'Tractors, tillers, harvesters and more' },
+                                        { icon: '🚜', title: 'Agricultural Machinery', desc: 'Tractors, tillers, harvesters and more — also available on rent' },
                                         { icon: '🔧', title: 'Hand Tools', desc: 'Quality tools for everyday farming tasks' },
                                         { icon: '💧', title: 'Irrigation Systems', desc: 'Efficient water management solutions' },
                                         { icon: '🌱', title: 'Fertilizers & Inputs', desc: 'Crop nutrition and soil health products' },
@@ -197,6 +328,10 @@ export default function BusinessProfilePage() {
                                     <div className="flex items-center gap-2 bg-card rounded-lg px-4 py-2 border border-border shadow-xs">
                                         <CheckCircle className="w-4 h-4 text-success" />
                                         <span className="text-sm font-medium text-foreground">Agricultural Department Certified</span>
+                                    </div>
+                                    <div className="flex items-center gap-2 bg-amber-50 dark:bg-amber-950/20 rounded-lg px-4 py-2 border border-amber-300/50 shadow-xs">
+                                        <Award className="w-4 h-4 text-amber-700" />
+                                        <span className="text-sm font-medium text-foreground">Authorized Dealer – Srachi, Kashmir Province</span>
                                     </div>
                                 </div>
                             </CardContent>

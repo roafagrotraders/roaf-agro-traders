@@ -1,16 +1,41 @@
 {
   "schemaVersion": "1.0.0",
   "projectStateVersion": 3,
-  "summary": "Agricultural products e-commerce/catalog app featuring weeders, spare parts, fertilizers, irrigation tools, and horticultural tools, with business address at Hangulgund Kokernag near SBI Bank and contact number 6006149326.",
+  "summary": "Business website project featuring equipment sales, rentals, home delivery, and authorized dealership of Srachi in Kashmir province.",
   "architectural_notes": [],
   "known_issues": [],
   "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Srachi authorized dealer trust badge/seal with green and gold tones on a transparent background (srachi-dealer-badge.dim_300x120.png)\n- Home delivery illustration icon showing a truck or delivery vehicle in earthy-green tones (home-delivery-icon.dim_128x128.png)",
   "existing_features": [
     {
-      "id": "feature-display-the-business-address-hangulgund-kokernag-near-sbi-bank-and-contact-number-6006149326-on-the-businessprofilepage-the-site-footer-and-the-homepage-contact-hero-section-wherever-contact-details-are-shown",
-      "title": "Display the business address 'Hangulgund Kokernag, near SBI Bank' and contact number '6006149326' on the BusinessProfilePage, the site Footer, and the HomePage contact/hero section wherever contact details are shown.",
+      "id": "feature-add-a-machines-available-on-rent-section-to-the-homepage-that-highlights-rental-availability-for-agricultural-machines-this-should-include-a-visually-distinct-card-or-banner-with-a-heading-like-machines-available-on-rent-a-short-description-and-a-call-to-action-to-contact-for-rental-inquiries",
+      "title": "Add a 'Machines Available on Rent' section to the HomePage that highlights rental availability for agricultural machines. This should include a visually distinct card or banner with a heading like 'Machines Available on Rent', a short description, and a call-to-action to contact for rental inquiries.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-home-delivery-available-badge-or-highlight-across-relevant-pages-homepage-hero-section-productcatalogpage-and-footer-use-a-recognizable-delivery-icon-and-short-text-such-as-home-delivery-available-to-make-it-prominent",
+      "title": "Add a 'Home Delivery Available' badge or highlight across relevant pages (HomePage hero section, ProductCatalogPage, and Footer). Use a recognizable delivery icon and short text such as 'Home Delivery Available' to make it prominent.",
       "reqIds": [
         "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-authorized-dealer-of-srachi-in-kashmir-province-highlight-to-the-homepage-hero-section-and-the-businessprofilepage-display-it-as-a-prominent-badge-or-trust-seal-using-text-authorized-dealer-srachi-kashmir-province",
+      "title": "Add an 'Authorized Dealer of Srachi in Kashmir Province' highlight to the HomePage hero section and the BusinessProfilePage. Display it as a prominent badge or trust seal, using text: 'Authorized Dealer – Srachi, Kashmir Province'.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-productcard-component-to-display-a-available-for-rent-badge-alongside-or-below-the-existing-price-availability-info-when-a-product-supports-rental-if-the-backend-does-not-currently-support-a-rental-flag-on-products-display-the-general-rental-availability-note-on-all-product-cards",
+      "title": "Update the ProductCard component to display a 'Available for Rent' badge alongside or below the existing price/availability info when a product supports rental. If the backend does not currently support a rental flag on products, display the general rental availability note on all product cards.",
+      "reqIds": [
+        "REQ-4"
       ],
       "version": 1
     }
@@ -18,22 +43,20 @@
   "new_feature_requests": [
     {
       "id": "AR-1",
-      "summary": "Add product catalog with weeders, agricultural spare parts, fertilizers, irrigation tools, and horticultural tools",
+      "summary": "Add 'Machines available on rent basis' section/feature to the website",
       "reqIds": [],
       "status": "pending"
     },
     {
       "id": "AR-2",
-      "summary": "Add business address (Hangulgund Kokernag near SBI Bank) and contact number (6006149326) to the app",
+      "summary": "Add 'Home delivery available' information to the website",
       "reqIds": [],
       "status": "pending"
     },
     {
       "id": "AR-3",
-      "summary": "Update the static business profile in the backend to include the address 'Hangulgund Kokernag, near SBI Bank' and contact number '6006149326'.",
-      "reqIds": [
-        "REQ-1"
-      ],
+      "summary": "Highlight 'Authorized dealer of Srachi in Kashmir province' on the website",
+      "reqIds": [],
       "status": "pending"
     }
   ],

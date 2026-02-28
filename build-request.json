@@ -1,55 +1,97 @@
 {
   "kind": "build_request",
-  "title": "Add business address and contact number",
+  "title": "Add Rental, Home Delivery, and Authorized Dealer Highlights",
   "projectName": "Roaf Agro Traders",
   "priority": "normal",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Update the static business profile in the backend to include the address 'Hangulgund Kokernag, near SBI Bank' and contact number '6006149326'.",
-      "target": "backend",
-      "source": {
-        "messageIds": [
-          "msg-latest"
-        ],
-        "quotes": [
-          "Add adress hangulgund kokernag near sbi bank and contact number 6006149326"
-        ]
-      },
-      "acceptanceCriteria": [
-        "The business profile actor/record contains address field set to 'Hangulgund Kokernag, near SBI Bank'",
-        "The business profile actor/record contains a contact number field set to '6006149326'"
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "text": "Display the business address 'Hangulgund Kokernag, near SBI Bank' and contact number '6006149326' on the BusinessProfilePage, the site Footer, and the HomePage contact/hero section wherever contact details are shown.",
+      "text": "Add a 'Machines Available on Rent' section to the HomePage that highlights rental availability for agricultural machines. This should include a visually distinct card or banner with a heading like 'Machines Available on Rent', a short description, and a call-to-action to contact for rental inquiries.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-latest"
         ],
         "quotes": [
-          "Add adress hangulgund kokernag near sbi bank and contact number 6006149326"
+          "Machines are also available on rent basis"
         ]
       },
       "acceptanceCriteria": [
-        "BusinessProfilePage shows address 'Hangulgund Kokernag, near SBI Bank' and phone '6006149326'",
-        "Footer component shows address 'Hangulgund Kokernag, near SBI Bank' and phone '6006149326'",
-        "Address and contact number are clearly legible and consistently formatted across all locations"
+        "A rental section/card is visible on the HomePage",
+        "The section clearly communicates that machines are available for rent",
+        "A contact link or call-to-action is present for rental inquiries"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Add a 'Home Delivery Available' badge or highlight across relevant pages (HomePage hero section, ProductCatalogPage, and Footer). Use a recognizable delivery icon and short text such as 'Home Delivery Available' to make it prominent.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "Home delivery also available"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Home delivery information is visible on the HomePage",
+        "Home delivery information is visible on the ProductCatalogPage",
+        "The Footer includes a mention of home delivery",
+        "A delivery icon or badge accompanies the text"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Add an 'Authorized Dealer of Srachi in Kashmir Province' highlight to the HomePage hero section and the BusinessProfilePage. Display it as a prominent badge or trust seal, using text: 'Authorized Dealer – Srachi, Kashmir Province'.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "authorized dealer of srachi in kashmir province"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The authorized dealer badge/seal is displayed on the HomePage hero section",
+        "The authorized dealer information is also present on the BusinessProfilePage",
+        "The badge clearly names Srachi and Kashmir Province"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Update the ProductCard component to display a 'Available for Rent' badge alongside or below the existing price/availability info when a product supports rental. If the backend does not currently support a rental flag on products, display the general rental availability note on all product cards.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "Machines are also available on rent basis"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Product cards show a rental availability indicator",
+        "The indicator is visually distinct from other badges"
       ]
     }
   ],
   "constraints": [
-    "Do not alter immutable frontend paths (hooks, main.tsx, ui components)",
-    "Keep all Motoko logic in backend/main.mo single actor"
+    "Do not modify files in frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or frontend/src/components/ui",
+    "All new UI content must use English",
+    "Maintain the existing earthy-green and amber design token system defined in frontend/src/index.css"
   ],
   "nonGoals": [
-    "Adding new product categories in this request",
-    "Changing the visual theme or layout beyond displaying the new contact details"
+    "No new backend endpoints or data model changes are required unless a rental flag on products is explicitly needed",
+    "No online rental booking or payment flow",
+    "No third-party delivery tracking integration"
   ],
   "imageRequirements": {
-    "required": [],
+    "required": [
+      "Srachi authorized dealer trust badge/seal with green and gold tones on a transparent background (srachi-dealer-badge.dim_300x120.png)",
+      "Home delivery illustration icon showing a truck or delivery vehicle in earthy-green tones (home-delivery-icon.dim_128x128.png)"
+    ],
     "edits": []
   }
 }

@@ -1,53 +1,79 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-28T07:21:28.894Z",
+  "generatedAt": "2026-02-28T08:46:43.717Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 2,
-    "implemented": 1,
+    "total": 4,
+    "implemented": 4,
     "items": [
       {
         "id": "REQ-1",
-        "summary": "Update the static business profile in the backend to include the address 'Hangulgund Kokernag, near SBI Bank' and contact number '6006149326'.",
-        "status": "unknown",
-        "plannedFiles": [],
-        "matchedFiles": []
-      },
-      {
-        "id": "REQ-2",
-        "summary": "Display the business address 'Hangulgund Kokernag, near SBI Bank' and contact number '6006149326' on the BusinessProfilePage, the site Footer, and the HomePage contact/hero section wherever contact details are shown.",
+        "summary": "Add a 'Machines Available on Rent' section to the HomePage that highlights rental availability for agricultural machines. This should include a visually distinct card or banner with a heading like 'Machines Available on Rent', a short description, and a call-to-action to contact for rental inquiries.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/pages/BusinessProfilePage.tsx",
-          "frontend/src/components/layout/Footer.tsx",
           "frontend/src/pages/HomePage.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/pages/BusinessProfilePage.tsx",
-          "frontend/src/components/layout/Footer.tsx",
           "frontend/src/pages/HomePage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Add a 'Home Delivery Available' badge or highlight across relevant pages (HomePage hero section, ProductCatalogPage, and Footer). Use a recognizable delivery icon and short text such as 'Home Delivery Available' to make it prominent.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/ProductCatalogPage.tsx",
+          "frontend/src/components/layout/Footer.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/ProductCatalogPage.tsx",
+          "frontend/src/components/layout/Footer.tsx"
+        ]
+      },
+      {
+        "id": "REQ-3",
+        "summary": "Add an 'Authorized Dealer of Srachi in Kashmir Province' highlight to the HomePage hero section and the BusinessProfilePage. Display it as a prominent badge or trust seal, using text: 'Authorized Dealer – Srachi, Kashmir Province'.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/BusinessProfilePage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/BusinessProfilePage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-4",
+        "summary": "Update the ProductCard component to display a 'Available for Rent' badge alongside or below the existing price/availability info when a product supports rental. If the backend does not currently support a rental flag on products, display the general rental availability note on all product cards.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/product/ProductCard.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/product/ProductCard.tsx"
         ]
       }
     ]
   },
   "changedFiles": [
-    "backend/main.mo",
     "build-request.json",
-    "build-template/README.md",
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/backend.d.ts",
-    "frontend/src/backend.ts",
+    "frontend/public/assets/generated/home-delivery-icon.dim_128x128.png",
+    "frontend/public/assets/generated/srachi-dealer-badge.dim_300x120.png",
     "frontend/src/components/layout/Footer.tsx",
-    "frontend/src/declarations/backend.did.d.ts",
-    "frontend/src/declarations/backend.did.js",
+    "frontend/src/components/product/ProductCard.tsx",
     "frontend/src/pages/BusinessProfilePage.tsx",
     "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/ProductCatalogPage.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

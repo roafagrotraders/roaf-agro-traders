@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import ProductCard from '../components/product/ProductCard';
-import { Search, SlidersHorizontal, Package, X } from 'lucide-react';
+import { Search, SlidersHorizontal, Package, X, Truck, KeyRound } from 'lucide-react';
 
 const categoryLabels: Record<string, string> = {
     all: 'All Categories',
@@ -53,10 +53,25 @@ export default function ProductCatalogPage() {
             {/* Page Header */}
             <section className="bg-primary/5 border-b border-border py-10">
                 <div className="container mx-auto px-4">
-                    <h1 className="text-3xl font-bold font-serif text-foreground mb-2">Product Catalog</h1>
-                    <p className="text-muted-foreground">
-                        Browse our complete range of agricultural tools and equipment
-                    </p>
+                    <div className="flex flex-wrap items-start justify-between gap-4">
+                        <div>
+                            <h1 className="text-3xl font-bold font-serif text-foreground mb-2">Product Catalog</h1>
+                            <p className="text-muted-foreground">
+                                Browse our complete range of agricultural tools and equipment
+                            </p>
+                        </div>
+                        {/* Service Badges */}
+                        <div className="flex flex-wrap gap-2 items-center">
+                            <div className="flex items-center gap-2 bg-success/10 border border-success/25 rounded-full px-4 py-1.5">
+                                <Truck className="w-4 h-4 text-success flex-shrink-0" />
+                                <span className="text-sm font-semibold text-foreground">Home Delivery Available</span>
+                            </div>
+                            <div className="flex items-center gap-2 bg-accent/10 border border-accent/25 rounded-full px-4 py-1.5">
+                                <KeyRound className="w-4 h-4 text-accent-foreground flex-shrink-0" />
+                                <span className="text-sm font-semibold text-foreground">Machines on Rent</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 

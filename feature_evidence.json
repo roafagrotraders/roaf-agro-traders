@@ -2,10 +2,51 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-display-the-business-address-hangulgund-kokernag-near-sbi-bank-and-contact-number-6006149326-on-the-businessprofilepage-the-site-footer-and-the-homepage-contact-hero-section-wherever-contact-details-are-shown",
-      "featureTitle": "Display the business address 'Hangulgund Kokernag, near SBI Bank' and contact number '6006149326' on the BusinessProfilePage, the site Footer, and the HomePage contact/hero section wherever contact details are shown.",
+      "featureId": "feature-add-a-machines-available-on-rent-section-to-the-homepage-that-highlights-rental-availability-for-agricultural-machines-this-should-include-a-visually-distinct-card-or-banner-with-a-heading-like-machines-available-on-rent-a-short-description-and-a-call-to-action-to-contact-for-rental-inquiries",
+      "featureTitle": "Add a 'Machines Available on Rent' section to the HomePage that highlights rental availability for agricultural machines. This should include a visually distinct card or banner with a heading like 'Machines Available on Rent', a short description, and a call-to-action to contact for rental inquiries.",
+      "files": [
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-home-delivery-available-badge-or-highlight-across-relevant-pages-homepage-hero-section-productcatalogpage-and-footer-use-a-recognizable-delivery-icon-and-short-text-such-as-home-delivery-available-to-make-it-prominent",
+      "featureTitle": "Add a 'Home Delivery Available' badge or highlight across relevant pages (HomePage hero section, ProductCatalogPage, and Footer). Use a recognizable delivery icon and short text such as 'Home Delivery Available' to make it prominent.",
       "files": [
         "frontend/src/components/layout/Footer.tsx",
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/pages/ProductCatalogPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-an-authorized-dealer-of-srachi-in-kashmir-province-highlight-to-the-homepage-hero-section-and-the-businessprofilepage-display-it-as-a-prominent-badge-or-trust-seal-using-text-authorized-dealer-srachi-kashmir-province",
+      "featureTitle": "Add an 'Authorized Dealer of Srachi in Kashmir Province' highlight to the HomePage hero section and the BusinessProfilePage. Display it as a prominent badge or trust seal, using text: 'Authorized Dealer – Srachi, Kashmir Province'.",
+      "files": [
         "frontend/src/pages/BusinessProfilePage.tsx",
         "frontend/src/pages/HomePage.tsx"
       ],
@@ -19,7 +60,27 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-2"
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-productcard-component-to-display-a-available-for-rent-badge-alongside-or-below-the-existing-price-availability-info-when-a-product-supports-rental-if-the-backend-does-not-currently-support-a-rental-flag-on-products-display-the-general-rental-availability-note-on-all-product-cards",
+      "featureTitle": "Update the ProductCard component to display a 'Available for Rent' badge alongside or below the existing price/availability info when a product supports rental. If the backend does not currently support a rental flag on products, display the general rental availability note on all product cards.",
+      "files": [
+        "frontend/src/components/product/ProductCard.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
       ],
       "confidence": "high"
     }

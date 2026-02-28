@@ -1,5 +1,5 @@
 import { Link } from '@tanstack/react-router';
-import { Sprout, Heart, Phone, Mail, MapPin } from 'lucide-react';
+import { Sprout, Heart, Phone, Mail, MapPin, Truck, KeyRound, Award } from 'lucide-react';
 
 export default function Footer() {
     const year = new Date().getFullYear();
@@ -8,7 +8,7 @@ export default function Footer() {
     return (
         <footer className="bg-sidebar text-sidebar-foreground mt-auto">
             <div className="container mx-auto px-4 py-10">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     {/* Brand */}
                     <div className="space-y-3">
                         <div className="flex items-center gap-2">
@@ -50,6 +50,29 @@ export default function Footer() {
                         </nav>
                     </div>
 
+                    {/* Services */}
+                    <div className="space-y-3">
+                        <h3 className="font-semibold text-sm uppercase tracking-wider text-sidebar-foreground/80">Our Services</h3>
+                        <div className="flex flex-col gap-2.5 text-sm text-sidebar-foreground/70">
+                            <div className="flex items-center gap-2">
+                                <Truck className="w-4 h-4 text-sidebar-primary flex-shrink-0" />
+                                <span>Home Delivery Available</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <KeyRound className="w-4 h-4 text-sidebar-primary flex-shrink-0" />
+                                <span>Machines Available on Rent</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Award className="w-4 h-4 text-sidebar-primary flex-shrink-0" />
+                                <span>Authorized Dealer – Srachi</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Sprout className="w-4 h-4 text-sidebar-primary flex-shrink-0" />
+                                <span>Kashmir Province</span>
+                            </div>
+                        </div>
+                    </div>
+
                     {/* Contact */}
                     <div className="space-y-3">
                         <h3 className="font-semibold text-sm uppercase tracking-wider text-sidebar-foreground/80">Contact</h3>
@@ -65,10 +88,13 @@ export default function Footer() {
                                 <Phone className="w-4 h-4 text-sidebar-primary flex-shrink-0" />
                                 6006149326
                             </a>
-                            <span className="flex items-center gap-2">
+                            <a
+                                href="mailto:roafagrotraders@gmail.com"
+                                className="flex items-center gap-2 hover:text-sidebar-primary transition-colors"
+                            >
                                 <Mail className="w-4 h-4 text-sidebar-primary flex-shrink-0" />
-                                roafagrotraders@business.com
-                            </span>
+                                roafagrotraders@gmail.com
+                            </a>
                         </div>
                     </div>
                 </div>
