@@ -31,6 +31,37 @@ const categoryImages: Record<string, string> = {
     [ProductCategory.other]: '/assets/generated/equipment-harvester.dim_800x500.png',
 };
 
+// SVG wheat stalk component for animation
+function WheatStalk({ className = '' }: { className?: string }) {
+    return (
+        <svg viewBox="0 0 24 80" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+            {/* Stem */}
+            <line x1="12" y1="80" x2="12" y2="10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            {/* Grain head */}
+            <ellipse cx="12" cy="8" rx="4" ry="7" fill="currentColor" opacity="0.9" />
+            {/* Side grains */}
+            <ellipse cx="7" cy="18" rx="3" ry="5" fill="currentColor" opacity="0.75" transform="rotate(-20 7 18)" />
+            <ellipse cx="17" cy="18" rx="3" ry="5" fill="currentColor" opacity="0.75" transform="rotate(20 17 18)" />
+            <ellipse cx="6" cy="28" rx="2.5" ry="4" fill="currentColor" opacity="0.6" transform="rotate(-25 6 28)" />
+            <ellipse cx="18" cy="28" rx="2.5" ry="4" fill="currentColor" opacity="0.6" transform="rotate(25 18 28)" />
+        </svg>
+    );
+}
+
+// SVG leaf component
+function LeafSvg({ className = '' }: { className?: string }) {
+    return (
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+            <path
+                d="M20 38 C20 38 4 28 4 14 C4 6 12 2 20 2 C28 2 36 6 36 14 C36 28 20 38 20 38Z"
+                fill="currentColor"
+                opacity="0.85"
+            />
+            <line x1="20" y1="38" x2="20" y2="8" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
+        </svg>
+    );
+}
+
 export default function HomePage() {
     const { data: profile, isLoading: profileLoading } = useGetBusinessProfile();
     const { data: products, isLoading: productsLoading } = useGetProductCatalog();
@@ -53,6 +84,53 @@ export default function HomePage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/60"></div>
                 </div>
+
+                {/* Animated Agro Strip Banner */}
+                <div className="absolute bottom-0 left-0 right-0 h-16 overflow-hidden pointer-events-none opacity-20">
+                    <div className="flex animate-scroll-field" style={{ width: '200%' }}>
+                        <img
+                            src="/assets/generated/agro-strip-banner.dim_1200x200.png"
+                            alt=""
+                            className="h-16 w-auto object-cover shrink-0"
+                            style={{ minWidth: '50%' }}
+                            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                        />
+                        <img
+                            src="/assets/generated/agro-strip-banner.dim_1200x200.png"
+                            alt=""
+                            className="h-16 w-auto object-cover shrink-0"
+                            style={{ minWidth: '50%' }}
+                            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                        />
+                    </div>
+                </div>
+
+                {/* Animated Wheat Stalks - Right side decoration (hidden on mobile, flex on md+) */}
+                <div className="absolute bottom-0 right-0 hidden md:flex items-end gap-3 pr-6 pointer-events-none">
+                    <WheatStalk className="h-28 text-primary-foreground/20 animate-sway origin-bottom" />
+                    <WheatStalk className="h-36 text-primary-foreground/25 animate-sway-delayed origin-bottom" />
+                    <WheatStalk className="h-24 text-primary-foreground/15 animate-sway-alt origin-bottom" />
+                    <WheatStalk className="h-32 text-primary-foreground/20 animate-sway origin-bottom" />
+                    <WheatStalk className="h-20 text-primary-foreground/20 animate-sway-slow origin-bottom" />
+                </div>
+
+                {/* Floating Leaves */}
+                <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                    <LeafSvg className="absolute top-12 right-1/4 w-6 h-6 text-success/40 animate-leaf-drift" />
+                    <LeafSvg className="absolute top-20 right-1/3 w-4 h-4 text-success/30 animate-leaf-drift-delayed" />
+                    <LeafSvg className="absolute top-8 right-1/2 w-5 h-5 text-primary-foreground/20 animate-leaf-drift-slow" />
+                </div>
+
+                {/* Animated Seedling - decorative */}
+                <div className="absolute bottom-4 right-48 pointer-events-none hidden lg:block">
+                    <img
+                        src="/assets/generated/seedling-sprout.dim_256x256.png"
+                        alt=""
+                        className="w-16 h-16 object-contain opacity-25 animate-sprout-pulse"
+                        onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                    />
+                </div>
+
                 <div className="relative container mx-auto px-4 py-20 md:py-28">
                     <div className="max-w-2xl">
                         <div className="flex flex-wrap items-center gap-2 mb-4">
@@ -86,7 +164,7 @@ export default function HomePage() {
                                 {/* Address & Contact in Hero */}
                                 <div className="flex flex-wrap gap-4 mb-6">
                                     <div className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-lg px-3 py-2">
-                                        <MapPin className="w-4 h-4 text-accent flex-shrink-0" />
+                                        <MapPin className="w-4 h-4 text-accent shrink-0" />
                                         <span className="text-sm text-primary-foreground font-medium">
                                             {profile?.address || 'Hangulgund Kokernag, near SBI Bank'}
                                         </span>
@@ -95,7 +173,7 @@ export default function HomePage() {
                                         href={`tel:${profile?.contactNumber || '6006149326'}`}
                                         className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-lg px-3 py-2 hover:bg-primary-foreground/20 transition-colors"
                                     >
-                                        <Phone className="w-4 h-4 text-accent flex-shrink-0" />
+                                        <Phone className="w-4 h-4 text-accent shrink-0" />
                                         <span className="text-sm text-primary-foreground font-medium">
                                             {profile?.contactNumber || '6006149326'}
                                         </span>
@@ -158,7 +236,7 @@ export default function HomePage() {
                             <div className="h-1.5 bg-gradient-to-r from-accent to-primary"></div>
                             <CardContent className="p-6">
                                 <div className="flex items-start gap-4">
-                                    <div className="w-14 h-14 rounded-2xl bg-accent/15 flex items-center justify-center flex-shrink-0">
+                                    <div className="w-14 h-14 rounded-2xl bg-accent/15 flex items-center justify-center shrink-0">
                                         <KeyRound className="w-7 h-7 text-accent-foreground" />
                                     </div>
                                     <div>
@@ -183,7 +261,7 @@ export default function HomePage() {
                             <div className="h-1.5 bg-gradient-to-r from-success to-primary"></div>
                             <CardContent className="p-6">
                                 <div className="flex items-start gap-4">
-                                    <div className="w-14 h-14 rounded-2xl bg-success/10 flex items-center justify-center flex-shrink-0">
+                                    <div className="w-14 h-14 rounded-2xl bg-success/10 flex items-center justify-center shrink-0">
                                         <Truck className="w-7 h-7 text-success" />
                                     </div>
                                     <div>
@@ -208,7 +286,7 @@ export default function HomePage() {
                             <div className="h-1.5 bg-gradient-to-r from-amber-500 to-amber-700"></div>
                             <CardContent className="p-6">
                                 <div className="flex items-start gap-4">
-                                    <div className="w-14 h-14 rounded-2xl bg-amber-500/10 flex items-center justify-center flex-shrink-0">
+                                    <div className="w-14 h-14 rounded-2xl bg-amber-500/10 flex items-center justify-center shrink-0">
                                         <Award className="w-7 h-7 text-amber-700" />
                                     </div>
                                     <div>
@@ -298,33 +376,25 @@ export default function HomePage() {
             </section>
 
             {/* Categories */}
-            <section className="py-14 bg-muted/40">
+            <section className="py-14 bg-muted/30">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-10">
-                        <h2 className="text-3xl font-bold font-serif text-foreground mb-3">Product Categories</h2>
+                        <h2 className="text-3xl font-bold font-serif text-foreground mb-3">Shop by Category</h2>
                         <p className="text-muted-foreground max-w-xl mx-auto">
-                            Explore our wide range of agricultural tools and equipment for every farming need.
+                            Find the right tools for your agricultural needs.
                         </p>
                     </div>
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
                         {categories.map((cat) => (
-                            <Link key={cat} to="/catalog" className="group">
-                                <Card className="overflow-hidden text-center hover:shadow-card-hover transition-all duration-200 hover:border-primary/30 cursor-pointer group-hover:-translate-y-0.5">
-                                    <div className="aspect-video overflow-hidden bg-muted">
-                                        <img
-                                            src={categoryImages[cat]}
-                                            alt={categoryLabels[cat]}
-                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                                            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-                                        />
-                                    </div>
-                                    <CardContent className="p-3 flex flex-col items-center gap-1">
-                                        <span className="text-xl">{categoryIcons[cat]}</span>
-                                        <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
-                                            {categoryLabels[cat]}
-                                        </span>
-                                    </CardContent>
-                                </Card>
+                            <Link
+                                key={cat}
+                                to="/catalog"
+                                className="group flex flex-col items-center gap-3 p-5 rounded-2xl bg-card border border-border hover:border-primary/40 hover:shadow-card transition-all text-center"
+                            >
+                                <span className="text-3xl group-hover:scale-110 transition-transform duration-200">
+                                    {categoryIcons[cat]}
+                                </span>
+                                <span className="text-sm font-semibold text-foreground">{categoryLabels[cat]}</span>
                             </Link>
                         ))}
                     </div>
@@ -332,96 +402,140 @@ export default function HomePage() {
             </section>
 
             {/* Featured Products */}
-            <section className="py-14">
-                <div className="container mx-auto px-4">
-                    <div className="flex items-center justify-between mb-10">
-                        <div>
-                            <h2 className="text-3xl font-bold font-serif text-foreground mb-2">Featured Products</h2>
-                            <p className="text-muted-foreground">Top picks from our catalog</p>
-                        </div>
-                        <Button asChild variant="outline" className="hidden sm:flex gap-2">
-                            <Link to="/catalog">
-                                View All
-                                <ArrowRight className="w-4 h-4" />
-                            </Link>
-                        </Button>
+            <section className="py-14 container mx-auto px-4">
+                <div className="flex items-center justify-between mb-10">
+                    <div>
+                        <h2 className="text-3xl font-bold font-serif text-foreground mb-2">Featured Products</h2>
+                        <p className="text-muted-foreground">Top picks from our catalog</p>
                     </div>
-
-                    {productsLoading ? (
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                            {[1, 2, 3].map((i) => (
-                                <Card key={i} className="overflow-hidden">
-                                    <Skeleton className="h-44 w-full" />
-                                    <CardContent className="p-5 space-y-3">
-                                        <Skeleton className="h-5 w-3/4" />
-                                        <Skeleton className="h-4 w-1/2" />
-                                        <Skeleton className="h-16 w-full" />
-                                        <Skeleton className="h-8 w-1/3" />
-                                    </CardContent>
-                                </Card>
-                            ))}
-                        </div>
-                    ) : featuredProducts.length === 0 ? (
-                        <div className="text-center py-12 text-muted-foreground">
-                            <Package className="w-12 h-12 mx-auto mb-3 opacity-40" />
-                            <p>No products available yet. Check back soon!</p>
-                        </div>
-                    ) : (
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                            {featuredProducts.map((product) => (
-                                <Card key={product.id} className="overflow-hidden hover:shadow-card-hover transition-all duration-200 hover:-translate-y-0.5">
-                                    <div className="aspect-video overflow-hidden bg-muted">
-                                        <img
-                                            src={categoryImages[product.category] || '/assets/generated/equipment-tractor.dim_800x500.png'}
-                                            alt={product.name}
-                                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                                            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-                                        />
+                    <Button asChild variant="outline" className="hidden sm:flex">
+                        <Link to="/catalog">
+                            View All
+                            <ArrowRight className="w-4 h-4 ml-2" />
+                        </Link>
+                    </Button>
+                </div>
+                {productsLoading ? (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {[1, 2, 3].map((i) => (
+                            <div key={i} className="rounded-xl border border-border bg-card p-5 space-y-3">
+                                <Skeleton className="h-5 w-3/4" />
+                                <Skeleton className="h-4 w-1/2" />
+                                <Skeleton className="h-16 w-full" />
+                                <Skeleton className="h-8 w-1/3" />
+                            </div>
+                        ))}
+                    </div>
+                ) : featuredProducts.length === 0 ? (
+                    <div className="text-center py-16 text-muted-foreground">
+                        <Package className="w-12 h-12 mx-auto mb-3 opacity-40" />
+                        <p>No products available yet.</p>
+                    </div>
+                ) : (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {featuredProducts.map((product) => (
+                            <div key={product.id} className="rounded-xl border border-border bg-card p-5 hover:shadow-card-hover transition-shadow">
+                                <div className="relative mb-3">
+                                    <img
+                                        src={categoryImages[product.category] || '/assets/generated/equipment-tools.dim_800x500.png'}
+                                        alt={product.name}
+                                        className="w-full h-40 object-cover rounded-lg"
+                                        onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                                    />
+                                    <div className="absolute top-2 left-2 flex gap-1.5 flex-wrap">
+                                        {product.available ? (
+                                            <Badge className="bg-success/90 text-success-foreground text-xs border-0">In Stock</Badge>
+                                        ) : (
+                                            <Badge variant="secondary" className="text-xs">Out of Stock</Badge>
+                                        )}
+                                        <Badge className="bg-accent/90 text-accent-foreground text-xs border-0">
+                                            <KeyRound className="w-2.5 h-2.5 mr-1" />
+                                            Available for Rent
+                                        </Badge>
                                     </div>
-                                    <CardContent className="p-5">
-                                        <div className="flex items-start justify-between mb-2">
-                                            <Badge variant="secondary" className="text-xs">
-                                                {categoryLabels[product.category] || product.category}
-                                            </Badge>
-                                            <Badge className={product.available ? 'bg-success/15 text-success border-0' : 'bg-destructive/15 text-destructive border-0'}>
-                                                {product.available ? 'In Stock' : 'Out of Stock'}
-                                            </Badge>
-                                        </div>
-                                        <h3 className="font-bold text-foreground text-base mb-1 leading-snug">{product.name}</h3>
-                                        <p className="text-sm text-muted-foreground line-clamp-2 mb-3 leading-relaxed">
-                                            {product.description}
-                                        </p>
-                                        <div className="flex items-center justify-between">
-                                            <span className="text-xl font-bold text-primary">
-                                                ₹{product.price.toLocaleString('en-IN', { minimumFractionDigits: 2 })}
-                                            </span>
-                                            <Badge className="bg-accent/15 text-accent-foreground border-accent/20 border text-xs font-medium">
-                                                <KeyRound className="w-3 h-3 mr-1" />
-                                                For Rent
-                                            </Badge>
-                                        </div>
-                                    </CardContent>
-                                </Card>
-                            ))}
-                        </div>
-                    )}
+                                </div>
+                                <Badge variant="outline" className="text-xs mb-2">{categoryLabels[product.category]}</Badge>
+                                <h3 className="font-bold text-foreground mb-1">{product.name}</h3>
+                                <p className="text-sm text-muted-foreground mb-3 line-clamp-2">{product.description}</p>
+                                <div className="flex items-center justify-between">
+                                    <span className="text-lg font-bold text-primary">₹{product.price.toLocaleString()}</span>
+                                    <Button asChild size="sm" variant="outline">
+                                        <Link to="/catalog">
+                                            <ShoppingCart className="w-3.5 h-3.5 mr-1.5" />
+                                            View
+                                        </Link>
+                                    </Button>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                )}
+                <div className="text-center mt-8 sm:hidden">
+                    <Button asChild variant="outline">
+                        <Link to="/catalog">
+                            View All Products
+                            <ArrowRight className="w-4 h-4 ml-2" />
+                        </Link>
+                    </Button>
                 </div>
             </section>
 
-            {/* Stats */}
-            <section className="py-14 bg-primary text-primary-foreground">
-                <div className="container mx-auto px-4">
+            {/* Stats Section */}
+            <section className="py-14 bg-primary text-primary-foreground relative overflow-hidden">
+                {/* Animated wheat stalks background decoration */}
+                <div className="absolute bottom-0 left-0 flex items-end gap-2 pl-4 pointer-events-none opacity-15">
+                    <svg viewBox="0 0 24 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-20 text-primary-foreground animate-sway origin-bottom">
+                        <line x1="12" y1="80" x2="12" y2="10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                        <ellipse cx="12" cy="8" rx="4" ry="7" fill="currentColor" opacity="0.9" />
+                        <ellipse cx="7" cy="18" rx="3" ry="5" fill="currentColor" opacity="0.75" transform="rotate(-20 7 18)" />
+                        <ellipse cx="17" cy="18" rx="3" ry="5" fill="currentColor" opacity="0.75" transform="rotate(20 17 18)" />
+                    </svg>
+                    <svg viewBox="0 0 24 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-28 text-primary-foreground animate-sway-delayed origin-bottom">
+                        <line x1="12" y1="80" x2="12" y2="10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                        <ellipse cx="12" cy="8" rx="4" ry="7" fill="currentColor" opacity="0.9" />
+                        <ellipse cx="7" cy="18" rx="3" ry="5" fill="currentColor" opacity="0.75" transform="rotate(-20 7 18)" />
+                        <ellipse cx="17" cy="18" rx="3" ry="5" fill="currentColor" opacity="0.75" transform="rotate(20 17 18)" />
+                    </svg>
+                    <svg viewBox="0 0 24 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-16 text-primary-foreground animate-sway-alt origin-bottom">
+                        <line x1="12" y1="80" x2="12" y2="10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                        <ellipse cx="12" cy="8" rx="4" ry="7" fill="currentColor" opacity="0.9" />
+                        <ellipse cx="7" cy="18" rx="3" ry="5" fill="currentColor" opacity="0.75" transform="rotate(-20 7 18)" />
+                        <ellipse cx="17" cy="18" rx="3" ry="5" fill="currentColor" opacity="0.75" transform="rotate(20 17 18)" />
+                    </svg>
+                </div>
+                <div className="absolute bottom-0 right-0 flex items-end gap-2 pr-4 pointer-events-none opacity-15">
+                    <svg viewBox="0 0 24 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-24 text-primary-foreground animate-sway-slow origin-bottom">
+                        <line x1="12" y1="80" x2="12" y2="10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                        <ellipse cx="12" cy="8" rx="4" ry="7" fill="currentColor" opacity="0.9" />
+                        <ellipse cx="7" cy="18" rx="3" ry="5" fill="currentColor" opacity="0.75" transform="rotate(-20 7 18)" />
+                        <ellipse cx="17" cy="18" rx="3" ry="5" fill="currentColor" opacity="0.75" transform="rotate(20 17 18)" />
+                    </svg>
+                    <svg viewBox="0 0 24 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-32 text-primary-foreground animate-sway origin-bottom">
+                        <line x1="12" y1="80" x2="12" y2="10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                        <ellipse cx="12" cy="8" rx="4" ry="7" fill="currentColor" opacity="0.9" />
+                        <ellipse cx="7" cy="18" rx="3" ry="5" fill="currentColor" opacity="0.75" transform="rotate(-20 7 18)" />
+                        <ellipse cx="17" cy="18" rx="3" ry="5" fill="currentColor" opacity="0.75" transform="rotate(20 17 18)" />
+                    </svg>
+                    <svg viewBox="0 0 24 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-20 text-primary-foreground animate-sway-delayed origin-bottom">
+                        <line x1="12" y1="80" x2="12" y2="10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                        <ellipse cx="12" cy="8" rx="4" ry="7" fill="currentColor" opacity="0.9" />
+                        <ellipse cx="7" cy="18" rx="3" ry="5" fill="currentColor" opacity="0.75" transform="rotate(-20 7 18)" />
+                        <ellipse cx="17" cy="18" rx="3" ry="5" fill="currentColor" opacity="0.75" transform="rotate(20 17 18)" />
+                    </svg>
+                </div>
+
+                <div className="relative container mx-auto px-4">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                         {[
                             { icon: Package, value: products?.length || '—', label: 'Products Available' },
-                            { icon: Warehouse, value: '5+', label: 'Product Categories' },
-                            { icon: ShoppingCart, value: 'Srachi', label: 'Authorized Dealer' },
-                            { icon: Truck, value: 'Free', label: 'Home Delivery' },
+                            { icon: Warehouse, value: '5+', label: 'Equipment Categories' },
+                            { icon: CheckCircle, value: '100%', label: 'Genuine Products' },
+                            { icon: Sprout, value: 'Dept.', label: 'Approved Business' },
                         ].map((stat, i) => (
                             <div key={i} className="flex flex-col items-center gap-2">
                                 <stat.icon className="w-8 h-8 text-primary-foreground/70" />
-                                <div className="text-3xl font-bold font-serif">{stat.value}</div>
-                                <div className="text-sm text-primary-foreground/70">{stat.label}</div>
+                                <span className="text-3xl font-bold font-serif">{stat.value}</span>
+                                <span className="text-sm text-primary-foreground/70">{stat.label}</span>
                             </div>
                         ))}
                     </div>

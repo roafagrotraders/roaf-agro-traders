@@ -2,8 +2,8 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-add-a-machines-available-on-rent-section-to-the-homepage-that-highlights-rental-availability-for-agricultural-machines-this-should-include-a-visually-distinct-card-or-banner-with-a-heading-like-machines-available-on-rent-a-short-description-and-a-call-to-action-to-contact-for-rental-inquiries",
-      "featureTitle": "Add a 'Machines Available on Rent' section to the HomePage that highlights rental availability for agricultural machines. This should include a visually distinct card or banner with a heading like 'Machines Available on Rent', a short description, and a call-to-action to contact for rental inquiries.",
+      "featureId": "feature-add-animated-agricultural-and-horticultural-visual-elements-to-the-homepage-hero-section-include-css-tailwind-keyframe-animations-such-as-gently-swaying-wheat-stalks-or-crops-floating-leaves-growing-plants-or-soil-particle-effects-rendered-via-svg-or-canvas-overlays-to-create-a-lush-nature-inspired-atmosphere",
+      "featureTitle": "Add animated agricultural and horticultural visual elements to the HomePage hero section. Include CSS/Tailwind keyframe animations such as gently swaying wheat stalks or crops, floating leaves, growing plants, or soil particle effects rendered via SVG or canvas overlays to create a lush, nature-inspired atmosphere.",
       "files": [
         "frontend/src/pages/HomePage.tsx"
       ],
@@ -22,11 +22,10 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-add-a-home-delivery-available-badge-or-highlight-across-relevant-pages-homepage-hero-section-productcatalogpage-and-footer-use-a-recognizable-delivery-icon-and-short-text-such-as-home-delivery-available-to-make-it-prominent",
-      "featureTitle": "Add a 'Home Delivery Available' badge or highlight across relevant pages (HomePage hero section, ProductCatalogPage, and Footer). Use a recognizable delivery icon and short text such as 'Home Delivery Available' to make it prominent.",
+      "featureId": "feature-add-subtle-animated-decorative-elements-with-an-agricultural-theme-to-the-productcatalogpage-and-businessprofilepage-such-as-animated-leaf-dividers-sprouting-plant-borders-or-drifting-pollen-particles-to-reinforce-the-agro-horticulture-brand-identity-throughout-the-site",
+      "featureTitle": "Add subtle animated decorative elements with an agricultural theme to the ProductCatalogPage and BusinessProfilePage — such as animated leaf dividers, sprouting plant borders, or drifting pollen particles — to reinforce the agro-horticulture brand identity throughout the site.",
       "files": [
-        "frontend/src/components/layout/Footer.tsx",
-        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/pages/BusinessProfilePage.tsx",
         "frontend/src/pages/ProductCatalogPage.tsx"
       ],
       "components": [
@@ -44,11 +43,10 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-add-an-authorized-dealer-of-srachi-in-kashmir-province-highlight-to-the-homepage-hero-section-and-the-businessprofilepage-display-it-as-a-prominent-badge-or-trust-seal-using-text-authorized-dealer-srachi-kashmir-province",
-      "featureTitle": "Add an 'Authorized Dealer of Srachi in Kashmir Province' highlight to the HomePage hero section and the BusinessProfilePage. Display it as a prominent badge or trust seal, using text: 'Authorized Dealer – Srachi, Kashmir Province'.",
+      "featureId": "feature-enhance-the-footer-with-a-subtle-animated-agricultural-horticultural-accent-such-as-a-scrolling-field-row-illustration-animated-seedling-icons-or-a-gently-waving-grass-crop-strip-to-unify-the-visual-theme-across-the-full-page",
+      "featureTitle": "Enhance the Footer with a subtle animated agricultural/horticultural accent — such as a scrolling field row illustration, animated seedling icons, or a gently waving grass/crop strip — to unify the visual theme across the full page.",
       "files": [
-        "frontend/src/pages/BusinessProfilePage.tsx",
-        "frontend/src/pages/HomePage.tsx"
+        "frontend/src/components/layout/Footer.tsx"
       ],
       "components": [
         "authorization@4.0.0",
@@ -65,10 +63,10 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-update-the-productcard-component-to-display-a-available-for-rent-badge-alongside-or-below-the-existing-price-availability-info-when-a-product-supports-rental-if-the-backend-does-not-currently-support-a-rental-flag-on-products-display-the-general-rental-availability-note-on-all-product-cards",
-      "featureTitle": "Update the ProductCard component to display a 'Available for Rent' badge alongside or below the existing price/availability info when a product supports rental. If the backend does not currently support a rental flag on products, display the general rental availability note on all product cards.",
+      "featureId": "feature-define-reusable-tailwind-css-keyframe-animations-e-g-sway-float-up-leaf-drift-grow-in-in-the-tailwind-config-to-support-all-agricultural-and-horticultural-animation-effects-across-the-site-ensuring-consistent-timing-and-easing",
+      "featureTitle": "Define reusable Tailwind CSS keyframe animations (e.g., 'sway', 'float-up', 'leaf-drift', 'grow-in') in the Tailwind config to support all agricultural and horticultural animation effects across the site, ensuring consistent timing and easing.",
       "files": [
-        "frontend/src/components/product/ProductCard.tsx"
+        "frontend/tailwind.config.js"
       ],
       "components": [
         "authorization@4.0.0",

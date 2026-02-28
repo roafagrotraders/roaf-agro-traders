@@ -1,12 +1,14 @@
 # Specification
 
 ## Summary
-**Goal:** Add rental availability, home delivery highlights, and an authorized dealer badge to the Roaf Agro Traders frontend.
+**Goal:** Add agricultural and horticultural CSS animations throughout the Roaf Agro Traders site to create a lush, nature-inspired visual atmosphere.
 
 **Planned changes:**
-- Add a "Machines Available on Rent" section on the HomePage with a heading, short description, and a contact call-to-action
-- Add an "Available for Rent" badge to ProductCard components across all product listings
-- Display a "Home Delivery Available" badge/highlight with a delivery icon on the HomePage hero, ProductCatalogPage, and Footer
-- Add an "Authorized Dealer – Srachi, Kashmir Province" trust badge to the HomePage hero section and the BusinessProfilePage
+- Add at least two distinct animated elements to the HomePage hero section (e.g., swaying wheat stalks/crops, floating leaves) using SVG or canvas overlays
+- Add animated agricultural decorative elements to the ProductCatalogPage (e.g., animated leaf dividers, drifting pollen particles)
+- Add animated horticultural decorative elements to the BusinessProfilePage (e.g., animated leaf border or growing vine accent)
+- Add a subtle animated agricultural accent to the Footer (e.g., gently waving grass/crop strip or animated seedling icons)
+- Define at least three reusable custom Tailwind CSS keyframe animations (e.g., `sway`, `float-up`, `leaf-drift`, `grow-in`) in `tailwind.config.js` for use across all animated components
+- All animations use CSS transforms and opacity for performance, looping smoothly without layout shift
 
-**User-visible outcome:** Visitors can clearly see that machines are available for rent, home delivery is offered, and that Roaf Agro Traders is an authorized Srachi dealer in Kashmir Province — all from the HomePage and relevant pages.
+**User-visible outcome:** Visitors see nature-inspired agricultural animations throughout the site — in the hero, product catalog, business profile, and footer — reinforcing the agro-horticulture brand identity.

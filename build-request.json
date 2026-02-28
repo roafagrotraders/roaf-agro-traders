@@ -1,96 +1,95 @@
 {
   "kind": "build_request",
-  "title": "Add Rental, Home Delivery, and Authorized Dealer Highlights",
+  "title": "Add Agricultural & Horticultural Animations",
   "projectName": "Roaf Agro Traders",
   "priority": "normal",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Add a 'Machines Available on Rent' section to the HomePage that highlights rental availability for agricultural machines. This should include a visually distinct card or banner with a heading like 'Machines Available on Rent', a short description, and a call-to-action to contact for rental inquiries.",
+      "text": "Add animated agricultural and horticultural visual elements to the HomePage hero section. Include CSS/Tailwind keyframe animations such as gently swaying wheat stalks or crops, floating leaves, growing plants, or soil particle effects rendered via SVG or canvas overlays to create a lush, nature-inspired atmosphere.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-latest"
+          "msg-1"
         ],
         "quotes": [
-          "Machines are also available on rent basis"
+          "Add agricultural and horticultural animation stylish"
         ]
       },
       "acceptanceCriteria": [
-        "A rental section/card is visible on the HomePage",
-        "The section clearly communicates that machines are available for rent",
-        "A contact link or call-to-action is present for rental inquiries"
+        "Hero section on HomePage displays at least two distinct animated agricultural/horticultural elements (e.g., swaying crops, floating leaves).",
+        "Animations loop smoothly without jank or layout shift.",
+        "Animations are styled consistently with the existing green/earth-tone design system."
       ]
     },
     {
       "id": "REQ-2",
-      "text": "Add a 'Home Delivery Available' badge or highlight across relevant pages (HomePage hero section, ProductCatalogPage, and Footer). Use a recognizable delivery icon and short text such as 'Home Delivery Available' to make it prominent.",
+      "text": "Add subtle animated decorative elements with an agricultural theme to the ProductCatalogPage and BusinessProfilePage — such as animated leaf dividers, sprouting plant borders, or drifting pollen particles — to reinforce the agro-horticulture brand identity throughout the site.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-latest"
+          "msg-1"
         ],
         "quotes": [
-          "Home delivery also available"
+          "Add agricultural and horticultural animation stylish"
         ]
       },
       "acceptanceCriteria": [
-        "Home delivery information is visible on the HomePage",
-        "Home delivery information is visible on the ProductCatalogPage",
-        "The Footer includes a mention of home delivery",
-        "A delivery icon or badge accompanies the text"
+        "ProductCatalogPage has at least one animated agricultural decorative element visible on load.",
+        "BusinessProfilePage has at least one animated horticultural decorative element (e.g., animated leaf border or growing vine accent).",
+        "Decorative animations do not obscure content or interfere with interactive elements."
       ]
     },
     {
       "id": "REQ-3",
-      "text": "Add an 'Authorized Dealer of Srachi in Kashmir Province' highlight to the HomePage hero section and the BusinessProfilePage. Display it as a prominent badge or trust seal, using text: 'Authorized Dealer – Srachi, Kashmir Province'.",
+      "text": "Enhance the Footer with a subtle animated agricultural/horticultural accent — such as a scrolling field row illustration, animated seedling icons, or a gently waving grass/crop strip — to unify the visual theme across the full page.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-latest"
+          "msg-1"
         ],
         "quotes": [
-          "authorized dealer of srachi in kashmir province"
+          "Add agricultural and horticultural animation stylish"
         ]
       },
       "acceptanceCriteria": [
-        "The authorized dealer badge/seal is displayed on the HomePage hero section",
-        "The authorized dealer information is also present on the BusinessProfilePage",
-        "The badge clearly names Srachi and Kashmir Province"
+        "Footer includes at least one animated agricultural visual accent.",
+        "Animation is tasteful and does not distract from footer navigation links and contact information."
       ]
     },
     {
       "id": "REQ-4",
-      "text": "Update the ProductCard component to display a 'Available for Rent' badge alongside or below the existing price/availability info when a product supports rental. If the backend does not currently support a rental flag on products, display the general rental availability note on all product cards.",
+      "text": "Define reusable Tailwind CSS keyframe animations (e.g., 'sway', 'float-up', 'leaf-drift', 'grow-in') in the Tailwind config to support all agricultural and horticultural animation effects across the site, ensuring consistent timing and easing.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-latest"
+          "msg-1"
         ],
         "quotes": [
-          "Machines are also available on rent basis"
+          "Add agricultural and horticultural animation stylish"
         ]
       },
       "acceptanceCriteria": [
-        "Product cards show a rental availability indicator",
-        "The indicator is visually distinct from other badges"
+        "tailwind.config.js includes at least three new custom keyframe animation entries relevant to agricultural/horticultural motion.",
+        "New animation utility classes are used by the animated components in REQ-1, REQ-2, and REQ-3."
       ]
     }
   ],
   "constraints": [
-    "Do not modify files in frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or frontend/src/components/ui",
-    "All new UI content must use English",
-    "Maintain the existing earthy-green and amber design token system defined in frontend/src/index.css"
+    "Do not modify files under frontend/src/hooks/ or frontend/src/components/ui/.",
+    "Animations must be performant (prefer CSS transforms and opacity over layout-affecting properties).",
+    "Do not alter backend logic or data models."
   ],
   "nonGoals": [
-    "No new backend endpoints or data model changes are required unless a rental flag on products is explicitly needed",
-    "No online rental booking or payment flow",
-    "No third-party delivery tracking integration"
+    "Adding Three.js or WebGL 3D scenes.",
+    "Changing the product catalog data or backend schema.",
+    "Replacing the existing color design tokens or overall layout structure."
   ],
   "imageRequirements": {
     "required": [
-      "Srachi authorized dealer trust badge/seal with green and gold tones on a transparent background (srachi-dealer-badge.dim_300x120.png)",
-      "Home delivery illustration icon showing a truck or delivery vehicle in earthy-green tones (home-delivery-icon.dim_128x128.png)"
+      "Seamless horizontal strip illustration of stylized wheat stalks, sunflowers, and leafy vegetable plants in a flat vector art style with earthy greens and golden tones (agro-strip-banner.dim_1200x200.png)",
+      "Small decorative SVG-style leaf cluster icon with soft green gradient and subtle shadow (leaf-cluster-icon.dim_128x128.png)",
+      "Animated-ready seedling sprout illustration on transparent background with two small leaves and a soil mound (seedling-sprout.dim_256x256.png)"
     ],
     "edits": []
   }

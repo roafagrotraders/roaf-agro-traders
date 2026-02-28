@@ -97,11 +97,68 @@ export default {
                 'accordion-up': {
                     from: { height: 'var(--radix-accordion-content-height)' },
                     to: { height: '0' }
-                }
+                },
+                // Agricultural & Horticultural animations
+                'sway': {
+                    '0%, 100%': { transform: 'rotate(-4deg) translateX(0px)' },
+                    '25%': { transform: 'rotate(3deg) translateX(2px)' },
+                    '50%': { transform: 'rotate(-2deg) translateX(-1px)' },
+                    '75%': { transform: 'rotate(4deg) translateX(1px)' },
+                },
+                'sway-slow': {
+                    '0%, 100%': { transform: 'rotate(-3deg)' },
+                    '50%': { transform: 'rotate(3deg)' },
+                },
+                'float-up': {
+                    '0%': { transform: 'translateY(0px) rotate(0deg)', opacity: '0.7' },
+                    '50%': { transform: 'translateY(-18px) rotate(8deg)', opacity: '1' },
+                    '100%': { transform: 'translateY(0px) rotate(0deg)', opacity: '0.7' },
+                },
+                'leaf-drift': {
+                    '0%': { transform: 'translate(0px, 0px) rotate(0deg)', opacity: '0' },
+                    '10%': { opacity: '0.8' },
+                    '90%': { opacity: '0.6' },
+                    '100%': { transform: 'translate(-60px, -80px) rotate(-30deg)', opacity: '0' },
+                },
+                'grow-in': {
+                    '0%': { transform: 'scaleY(0) translateY(10px)', opacity: '0', transformOrigin: 'bottom' },
+                    '60%': { transform: 'scaleY(1.05) translateY(-2px)', opacity: '1', transformOrigin: 'bottom' },
+                    '100%': { transform: 'scaleY(1) translateY(0px)', opacity: '1', transformOrigin: 'bottom' },
+                },
+                'sprout-pulse': {
+                    '0%, 100%': { transform: 'scale(1)', opacity: '0.85' },
+                    '50%': { transform: 'scale(1.08)', opacity: '1' },
+                },
+                'scroll-field': {
+                    '0%': { transform: 'translateX(0%)' },
+                    '100%': { transform: 'translateX(-50%)' },
+                },
+                'pollen-float': {
+                    '0%': { transform: 'translateY(0px) translateX(0px)', opacity: '0' },
+                    '20%': { opacity: '0.6' },
+                    '80%': { opacity: '0.4' },
+                    '100%': { transform: 'translateY(-40px) translateX(20px)', opacity: '0' },
+                },
             },
             animation: {
                 'accordion-down': 'accordion-down 0.2s ease-out',
-                'accordion-up': 'accordion-up 0.2s ease-out'
+                'accordion-up': 'accordion-up 0.2s ease-out',
+                // Agricultural & Horticultural animations
+                'sway': 'sway 3s ease-in-out infinite',
+                'sway-slow': 'sway-slow 5s ease-in-out infinite',
+                'sway-delayed': 'sway 3.5s ease-in-out infinite 0.8s',
+                'sway-alt': 'sway-slow 4s ease-in-out infinite 1.2s',
+                'float-up': 'float-up 4s ease-in-out infinite',
+                'float-up-delayed': 'float-up 4.5s ease-in-out infinite 1.5s',
+                'float-up-slow': 'float-up 6s ease-in-out infinite 0.5s',
+                'leaf-drift': 'leaf-drift 6s ease-in-out infinite',
+                'leaf-drift-delayed': 'leaf-drift 7s ease-in-out infinite 2s',
+                'leaf-drift-slow': 'leaf-drift 9s ease-in-out infinite 4s',
+                'grow-in': 'grow-in 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
+                'sprout-pulse': 'sprout-pulse 3s ease-in-out infinite',
+                'scroll-field': 'scroll-field 20s linear infinite',
+                'pollen-float': 'pollen-float 5s ease-in-out infinite',
+                'pollen-float-delayed': 'pollen-float 6s ease-in-out infinite 2s',
             }
         }
     },

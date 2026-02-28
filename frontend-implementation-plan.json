@@ -1,84 +1,72 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Add Rental, Home Delivery, and Authorized Dealer Highlights",
+  "title": "Add Agricultural & Horticultural Animations",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Add a 'Machines Available on Rent' section to the HomePage highlighting rental availability for agricultural machines",
+      "summary": "Add animated agricultural and horticultural visual elements to the HomePage hero section with CSS/Tailwind keyframe animations such as swaying wheat stalks, floating leaves, growing plants, or soil particle effects",
       "acceptanceCriteria": [
-        "A rental section/card is visible on the HomePage",
-        "The section clearly communicates that machines are available for rent",
-        "A contact link or call-to-action is present for rental inquiries"
+        "Hero section on HomePage displays at least two distinct animated agricultural/horticultural elements (e.g., swaying crops, floating leaves).",
+        "Animations loop smoothly without jank or layout shift.",
+        "Animations are styled consistently with the existing green/earth-tone design system."
       ],
       "file_operations": [
         {
           "path": "frontend/src/pages/HomePage.tsx",
           "operation": "modify",
-          "description": "Add a 'Machines Available on Rent' section after the hero section and before the featured products. Include a visually distinct card with a heading, short description explaining rental availability for agricultural equipment, and a contact call-to-action button that links to the business contact information. Use earthy-green styling consistent with the existing theme."
+          "description": "Enhance the hero section with at least two animated agricultural/horticultural elements using the custom keyframe animations defined in REQ-4. Add SVG or CSS-based elements representing swaying wheat stalks, floating leaves, growing plants, or soil particles. Position these as overlays or background decorations within the hero container. Wire in the generated images frontend/public/assets/generated/agro-strip-banner.dim_1200x200.png and frontend/public/assets/generated/seedling-sprout.dim_256x256.png as part of the animated decorations. Apply animation classes like 'animate-sway', 'animate-float-up', or 'animate-grow-in' to achieve smooth looping effects. Ensure animations do not cause layout shift and blend with the existing green/earth-tone design tokens."
         }
       ]
     },
     {
       "id": "REQ-2",
-      "summary": "Add 'Home Delivery Available' badge or highlight across HomePage hero, ProductCatalogPage, and Footer",
+      "summary": "Add subtle animated decorative elements with an agricultural theme to the ProductCatalogPage and BusinessProfilePage to reinforce the agro-horticulture brand identity",
       "acceptanceCriteria": [
-        "Home delivery information is visible on the HomePage",
-        "Home delivery information is visible on the ProductCatalogPage",
-        "The Footer includes a mention of home delivery",
-        "A delivery icon or badge accompanies the text"
+        "ProductCatalogPage has at least one animated agricultural decorative element visible on load.",
+        "BusinessProfilePage has at least one animated horticultural decorative element (e.g., animated leaf border or growing vine accent).",
+        "Decorative animations do not obscure content or interfere with interactive elements."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/pages/HomePage.tsx",
-          "operation": "modify",
-          "description": "Add a 'Home Delivery Available' badge to the hero section using the generated image at frontend/public/assets/generated/home-delivery-icon.dim_128x128.png. Display the icon alongside text 'Home Delivery Available' in a prominent position within the hero area, styled with earthy-green tones."
-        },
-        {
           "path": "frontend/src/pages/ProductCatalogPage.tsx",
           "operation": "modify",
-          "description": "Add a 'Home Delivery Available' badge near the page title or header area using the generated image at frontend/public/assets/generated/home-delivery-icon.dim_128x128.png. Include the delivery icon with text 'Home Delivery Available' to make it prominent for users browsing products."
+          "description": "Add at least one animated agricultural decorative element to the ProductCatalogPage, such as animated leaf dividers, sprouting plant borders, or drifting pollen particles. Use the generated image frontend/public/assets/generated/leaf-cluster-icon.dim_128x128.png as a decorative accent. Apply custom animation classes from REQ-4 (e.g., 'animate-leaf-drift' or 'animate-float-up'). Position the animated element so it does not obscure product cards, filters, or other interactive content. Ensure the animation reinforces the agro-horticulture brand without interfering with user interactions."
         },
         {
-          "path": "frontend/src/components/layout/Footer.tsx",
+          "path": "frontend/src/pages/BusinessProfilePage.tsx",
           "operation": "modify",
-          "description": "Add a 'Home Delivery Available' mention in the contact section of the footer using the generated image at frontend/public/assets/generated/home-delivery-icon.dim_128x128.png. Display the delivery icon with text to reinforce delivery availability site-wide."
+          "description": "Add at least one animated horticultural decorative element to the BusinessProfilePage, such as an animated leaf border, growing vine accent, or drifting leaf particles. Incorporate the generated image frontend/public/assets/generated/leaf-cluster-icon.dim_128x128.png or frontend/public/assets/generated/seedling-sprout.dim_256x256.png as part of the decoration. Apply custom animation classes from REQ-4 (e.g., 'animate-grow-in' or 'animate-sway'). Position the animated element tastefully around the profile content without obscuring text, badges, or contact information. Ensure the animation complements the existing layout and design system."
         }
       ]
     },
     {
       "id": "REQ-3",
-      "summary": "Add 'Authorized Dealer of Srachi in Kashmir Province' highlight to HomePage hero and BusinessProfilePage",
+      "summary": "Enhance the Footer with a subtle animated agricultural/horticultural accent such as a scrolling field row illustration, animated seedling icons, or a gently waving grass/crop strip",
       "acceptanceCriteria": [
-        "The authorized dealer badge/seal is displayed on the HomePage hero section",
-        "The authorized dealer information is also present on the BusinessProfilePage",
-        "The badge clearly names Srachi and Kashmir Province"
+        "Footer includes at least one animated agricultural visual accent.",
+        "Animation is tasteful and does not distract from footer navigation links and contact information."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/pages/HomePage.tsx",
+          "path": "frontend/src/components/layout/Footer.tsx",
           "operation": "modify",
-          "description": "Add an 'Authorized Dealer – Srachi, Kashmir Province' badge to the hero section using the generated image at frontend/public/assets/generated/srachi-dealer-badge.dim_300x120.png. Display the trust seal prominently near the hero content to establish dealer credibility."
-        },
-        {
-          "path": "frontend/src/pages/BusinessProfilePage.tsx",
-          "operation": "modify",
-          "description": "Add an 'Authorized Dealer – Srachi, Kashmir Province' badge to the business profile page using the generated image at frontend/public/assets/generated/srachi-dealer-badge.dim_300x120.png. Display the trust seal in a prominent position alongside other business credentials to reinforce authorized dealer status."
+          "description": "Add a subtle animated agricultural/horticultural accent to the Footer. Use the generated image frontend/public/assets/generated/agro-strip-banner.dim_1200x200.png as a scrolling field row illustration or waving grass/crop strip at the top or bottom edge of the footer. Alternatively, add animated seedling icons using frontend/public/assets/generated/seedling-sprout.dim_256x256.png with a growing or swaying animation. Apply custom keyframe animations from REQ-4 (e.g., 'animate-sway' or a horizontal scroll effect). Ensure the animation is tasteful, does not distract from footer navigation links and contact details, and blends harmoniously with the existing footer layout and color scheme."
         }
       ]
     },
     {
       "id": "REQ-4",
-      "summary": "Update ProductCard component to display 'Available for Rent' badge for rental availability",
+      "summary": "Define reusable Tailwind CSS keyframe animations in the Tailwind config to support all agricultural and horticultural animation effects across the site",
       "acceptanceCriteria": [
-        "Product cards show a rental availability indicator",
-        "The indicator is visually distinct from other badges"
+        "tailwind.config.js includes at least three new custom keyframe animation entries relevant to agricultural/horticultural motion.",
+        "New animation utility classes are used by the animated components in REQ-1, REQ-2, and REQ-3."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/product/ProductCard.tsx",
+          "path": "frontend/tailwind.config.js",
           "operation": "modify",
-          "description": "Add an 'Available for Rent' badge to the ProductCard component that displays alongside existing price and availability information. Since the backend does not currently support a rental flag on products, display the rental availability note on all product cards. Style the badge distinctly using earthy-green tones to differentiate it from category and availability badges."
+          "description": "Define at least three reusable custom keyframe animations in the Tailwind config relevant to agricultural and horticultural motion. Add keyframes such as 'sway' (gentle side-to-side motion for crops or grass), 'float-up' (vertical drift for leaves or pollen), 'leaf-drift' (diagonal floating motion), and 'grow-in' (scale and opacity animation for sprouting plants). Extend the theme.animation and theme.keyframes sections with these new entries, ensuring consistent timing (e.g., 2s–6s durations) and easing (e.g., ease-in-out or cubic-bezier curves). These animations will be consumed by the components modified in REQ-1, REQ-2, and REQ-3 via utility classes like 'animate-sway', 'animate-float-up', 'animate-leaf-drift', and 'animate-grow-in'."
         }
       ]
     }

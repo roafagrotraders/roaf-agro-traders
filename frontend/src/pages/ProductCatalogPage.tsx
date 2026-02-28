@@ -18,6 +18,38 @@ const categoryLabels: Record<string, string> = {
     [ProductCategory.other]: 'Other',
 };
 
+// Animated leaf divider component
+function AnimatedLeafDivider() {
+    return (
+        <div className="relative flex items-center justify-center gap-3 py-2 overflow-hidden pointer-events-none select-none">
+            {/* Drifting leaf particles */}
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
+                className="w-5 h-5 text-success/50 animate-leaf-drift absolute left-[10%] top-0">
+                <path d="M20 38 C20 38 4 28 4 14 C4 6 12 2 20 2 C28 2 36 6 36 14 C36 28 20 38 20 38Z" fill="currentColor" />
+            </svg>
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
+                className="w-4 h-4 text-primary/40 animate-leaf-drift-delayed absolute left-[30%] top-1">
+                <path d="M20 38 C20 38 4 28 4 14 C4 6 12 2 20 2 C28 2 36 6 36 14 C36 28 20 38 20 38Z" fill="currentColor" />
+            </svg>
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
+                className="w-3 h-3 text-success/35 animate-leaf-drift-slow absolute right-[25%] top-0">
+                <path d="M20 38 C20 38 4 28 4 14 C4 6 12 2 20 2 C28 2 36 6 36 14 C36 28 20 38 20 38Z" fill="currentColor" />
+            </svg>
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
+                className="w-4 h-4 text-accent/40 animate-leaf-drift absolute right-[10%] top-1">
+                <path d="M20 38 C20 38 4 28 4 14 C4 6 12 2 20 2 C28 2 36 6 36 14 C36 28 20 38 20 38Z" fill="currentColor" />
+            </svg>
+            {/* Center leaf cluster icon */}
+            <img
+                src="/assets/generated/leaf-cluster-icon.dim_128x128.png"
+                alt=""
+                className="w-8 h-8 object-contain opacity-30 animate-float-up"
+                onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+            />
+        </div>
+    );
+}
+
 export default function ProductCatalogPage() {
     const { data: products, isLoading } = useGetProductCatalog();
     const [search, setSearch] = useState('');
@@ -51,8 +83,33 @@ export default function ProductCatalogPage() {
     return (
         <div className="min-h-screen">
             {/* Page Header */}
-            <section className="bg-primary/5 border-b border-border py-10">
-                <div className="container mx-auto px-4">
+            <section className="bg-primary/5 border-b border-border py-10 relative overflow-hidden">
+                {/* Animated pollen/particle decorations */}
+                <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        className="w-5 h-5 text-success/30 animate-pollen-float absolute bottom-4 left-[15%]">
+                        <circle cx="20" cy="20" r="8" fill="currentColor" />
+                        <circle cx="20" cy="20" r="4" fill="white" opacity="0.5" />
+                    </svg>
+                    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        className="w-4 h-4 text-primary/25 animate-pollen-float-delayed absolute bottom-6 left-[40%]">
+                        <circle cx="20" cy="20" r="8" fill="currentColor" />
+                        <circle cx="20" cy="20" r="4" fill="white" opacity="0.5" />
+                    </svg>
+                    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        className="w-3 h-3 text-accent/30 animate-pollen-float absolute bottom-3 right-[20%]">
+                        <circle cx="20" cy="20" r="8" fill="currentColor" />
+                    </svg>
+                    {/* Leaf cluster accent - top right */}
+                    <img
+                        src="/assets/generated/leaf-cluster-icon.dim_128x128.png"
+                        alt=""
+                        className="absolute top-2 right-4 w-14 h-14 object-contain opacity-10 animate-sway-slow"
+                        onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                    />
+                </div>
+
+                <div className="container mx-auto px-4 relative">
                     <div className="flex flex-wrap items-start justify-between gap-4">
                         <div>
                             <h1 className="text-3xl font-bold font-serif text-foreground mb-2">Product Catalog</h1>
@@ -63,11 +120,11 @@ export default function ProductCatalogPage() {
                         {/* Service Badges */}
                         <div className="flex flex-wrap gap-2 items-center">
                             <div className="flex items-center gap-2 bg-success/10 border border-success/25 rounded-full px-4 py-1.5">
-                                <Truck className="w-4 h-4 text-success flex-shrink-0" />
+                                <Truck className="w-4 h-4 text-success shrink-0" />
                                 <span className="text-sm font-semibold text-foreground">Home Delivery Available</span>
                             </div>
                             <div className="flex items-center gap-2 bg-accent/10 border border-accent/25 rounded-full px-4 py-1.5">
-                                <KeyRound className="w-4 h-4 text-accent-foreground flex-shrink-0" />
+                                <KeyRound className="w-4 h-4 text-accent-foreground shrink-0" />
                                 <span className="text-sm font-semibold text-foreground">Machines on Rent</span>
                             </div>
                         </div>
@@ -76,8 +133,11 @@ export default function ProductCatalogPage() {
             </section>
 
             <div className="container mx-auto px-4 py-8">
+                {/* Animated leaf divider */}
+                <AnimatedLeafDivider />
+
                 {/* Filters */}
-                <div className="bg-card rounded-xl border border-border p-4 mb-8 shadow-xs">
+                <div className="bg-card rounded-xl border border-border p-4 mb-8 mt-2 shadow-xs">
                     <div className="flex flex-wrap gap-3 items-center">
                         <div className="relative flex-1 min-w-[200px]">
                             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />

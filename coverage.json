@@ -1,7 +1,7 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-28T08:46:43.717Z",
+  "generatedAt": "2026-02-28T10:06:23.971Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
@@ -12,7 +12,7 @@
     "items": [
       {
         "id": "REQ-1",
-        "summary": "Add a 'Machines Available on Rent' section to the HomePage that highlights rental availability for agricultural machines. This should include a visually distinct card or banner with a heading like 'Machines Available on Rent', a short description, and a call-to-action to contact for rental inquiries.",
+        "summary": "Add animated agricultural and horticultural visual elements to the HomePage hero section. Include CSS/Tailwind keyframe animations such as gently swaying wheat stalks or crops, floating leaves, growing plants, or soil particle effects rendered via SVG or canvas overlays to create a lush, nature-inspired atmosphere.",
         "status": "implemented",
         "plannedFiles": [
           "frontend/src/pages/HomePage.tsx"
@@ -23,41 +23,37 @@
       },
       {
         "id": "REQ-2",
-        "summary": "Add a 'Home Delivery Available' badge or highlight across relevant pages (HomePage hero section, ProductCatalogPage, and Footer). Use a recognizable delivery icon and short text such as 'Home Delivery Available' to make it prominent.",
+        "summary": "Add subtle animated decorative elements with an agricultural theme to the ProductCatalogPage and BusinessProfilePage — such as animated leaf dividers, sprouting plant borders, or drifting pollen particles — to reinforce the agro-horticulture brand identity throughout the site.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/pages/HomePage.tsx",
           "frontend/src/pages/ProductCatalogPage.tsx",
-          "frontend/src/components/layout/Footer.tsx"
+          "frontend/src/pages/BusinessProfilePage.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/pages/HomePage.tsx",
           "frontend/src/pages/ProductCatalogPage.tsx",
-          "frontend/src/components/layout/Footer.tsx"
+          "frontend/src/pages/BusinessProfilePage.tsx"
         ]
       },
       {
         "id": "REQ-3",
-        "summary": "Add an 'Authorized Dealer of Srachi in Kashmir Province' highlight to the HomePage hero section and the BusinessProfilePage. Display it as a prominent badge or trust seal, using text: 'Authorized Dealer – Srachi, Kashmir Province'.",
+        "summary": "Enhance the Footer with a subtle animated agricultural/horticultural accent — such as a scrolling field row illustration, animated seedling icons, or a gently waving grass/crop strip — to unify the visual theme across the full page.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/pages/HomePage.tsx",
-          "frontend/src/pages/BusinessProfilePage.tsx"
+          "frontend/src/components/layout/Footer.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/pages/HomePage.tsx",
-          "frontend/src/pages/BusinessProfilePage.tsx"
+          "frontend/src/components/layout/Footer.tsx"
         ]
       },
       {
         "id": "REQ-4",
-        "summary": "Update the ProductCard component to display a 'Available for Rent' badge alongside or below the existing price/availability info when a product supports rental. If the backend does not currently support a rental flag on products, display the general rental availability note on all product cards.",
+        "summary": "Define reusable Tailwind CSS keyframe animations (e.g., 'sway', 'float-up', 'leaf-drift', 'grow-in') in the Tailwind config to support all agricultural and horticultural animation effects across the site, ensuring consistent timing and easing.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/product/ProductCard.tsx"
+          "frontend/tailwind.config.js"
         ],
         "matchedFiles": [
-          "frontend/src/components/product/ProductCard.tsx"
+          "frontend/tailwind.config.js"
         ]
       }
     ]
@@ -67,13 +63,14 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/public/assets/generated/home-delivery-icon.dim_128x128.png",
-    "frontend/public/assets/generated/srachi-dealer-badge.dim_300x120.png",
+    "frontend/public/assets/generated/agro-strip-banner.dim_1200x200.png",
+    "frontend/public/assets/generated/leaf-cluster-icon.dim_128x128.png",
+    "frontend/public/assets/generated/seedling-sprout.dim_256x256.png",
     "frontend/src/components/layout/Footer.tsx",
-    "frontend/src/components/product/ProductCard.tsx",
     "frontend/src/pages/BusinessProfilePage.tsx",
     "frontend/src/pages/HomePage.tsx",
     "frontend/src/pages/ProductCatalogPage.tsx",
+    "frontend/tailwind.config.js",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",
